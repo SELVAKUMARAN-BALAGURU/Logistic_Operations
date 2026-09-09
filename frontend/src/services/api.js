@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://51.21.127.232:8000';
 
 export async function fetchDashboardSummary(params = {}) {
   const query = new URLSearchParams({
@@ -80,7 +80,7 @@ export async function analyzeSubProcesses(params) {
 export async function uploadDatasetFile(datasetType, file) {
   const formData = new FormData();
   formData.append('file', file);
-  
+
   const res = await fetch(`${API_BASE}/api/upload/${datasetType}`, {
     method: 'POST',
     body: formData
